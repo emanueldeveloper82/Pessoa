@@ -25,11 +25,9 @@ public class PessoaEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="TB_PESSOA_ID_PESSOA_SEQ")
 	@SequenceGenerator(name="TB_PESSOA_ID_PESSOA_SEQ", sequenceName="TB_PESSOA_ID_PESSOA_SEQ", schema="ESTUDOS", allocationSize = 1)
-	@Getter
 	@Column(name="ID_PESSOA")
 	private Long codigo;
 	
-	@Getter
 	@Column(name="DS_NOME")
 	private String	nome;
 	
