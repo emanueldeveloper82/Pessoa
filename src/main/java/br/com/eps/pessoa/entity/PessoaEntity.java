@@ -11,22 +11,25 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
 @Table(name="TB_PESSOA", schema="ESTUDOS")
 public class PessoaEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="TB_PESSOA_ID_PESSOA_SEQ")
-	@SequenceGenerator(name="TB_PESSOA_ID_PESSOA_SEQ", sequenceName="TB_PESSOA_ID_PESSOA_SEQ", schema="ESTUDOS", allocationSize = 1)  	
+	@SequenceGenerator(name="TB_PESSOA_ID_PESSOA_SEQ", sequenceName="TB_PESSOA_ID_PESSOA_SEQ", schema="ESTUDOS", allocationSize = 1)
+	@Getter
 	@Column(name="ID_PESSOA")
 	private Long codigo;
 	
+	@Getter
 	@Column(name="DS_NOME")
 	private String	nome;
 	
@@ -35,5 +38,37 @@ public class PessoaEntity {
 	
 	@Column(name="FL_ATIVO")
 	private boolean	ativo;
+
+	public Long getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Date getData_nascimento() {
+		return data_nascimento;
+	}
+
+	public void setData_nascimento(Date data_nascimento) {
+		this.data_nascimento = data_nascimento;
+	}
+
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
 	
 }
