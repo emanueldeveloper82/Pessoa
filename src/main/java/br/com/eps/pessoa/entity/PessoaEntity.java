@@ -10,14 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 @Entity
 @Table(name="TB_PESSOA", schema="ESTUDOS")
 public class PessoaEntity {
@@ -25,11 +17,9 @@ public class PessoaEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="TB_PESSOA_ID_PESSOA_SEQ")
 	@SequenceGenerator(name="TB_PESSOA_ID_PESSOA_SEQ", sequenceName="TB_PESSOA_ID_PESSOA_SEQ", schema="ESTUDOS", allocationSize = 1)
-	@Getter
 	@Column(name="ID_PESSOA")
 	private Long codigo;
 	
-	@Getter
 	@Column(name="DS_NOME")
 	private String	nome;
 	
