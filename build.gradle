@@ -30,7 +30,7 @@ dependencies {
 }
 
 
-task stage(type: Copy, dependsOn: [clean, build]) {
+/**task stage(type: Copy, dependsOn: [clean, build]) {
     from jar.archivePath
     into project.rootDir
     rename {
@@ -41,4 +41,5 @@ stage.mustRunAfter(clean)
 
 task cleanApp(type: Delete) {
     project.file('app.jar').delete()
-}
+}*/
+
