@@ -4,13 +4,11 @@ plugins {
 	id 'war'
 }
 
-
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'application'
 mainClassName = 'br.com.eps.pessoa.PessoaApplication'
 
 group = 'br.com.eps.pessoa'
-version = '0.0.1'
 sourceCompatibility = '1.8'
 
 repositories {
@@ -28,18 +26,3 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok:1.18.6'
 	
 }
-
-
-/**task stage(type: Copy, dependsOn: [clean, build]) {
-    from jar.archivePath
-    into project.rootDir
-    rename {
-        'app.jar'
-    }
-}
-stage.mustRunAfter(clean)
-
-task cleanApp(type: Delete) {
-    project.file('app.jar').delete()
-}*/
-
