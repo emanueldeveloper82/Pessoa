@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -Dspring.profiles.active=heroku -jar build/libs/Pessoa*.jar
+web: java -Dserver.port=$PORT $JAVA_OPTS -Dspring.profiles.active=heroku -jar build/libs/Pessoa*.war
